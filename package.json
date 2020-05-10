@@ -1,8 +1,8 @@
 {
   "name": "sprint12",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "sprint12 from yandex.praktikum",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"

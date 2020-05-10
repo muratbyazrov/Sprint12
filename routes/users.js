@@ -1,12 +1,12 @@
 const usersRouter = require('express').Router();
 const users = require('../data/users.json');
 
-usersRouter.get('/users', (req, res) => {
+usersRouter.get('/', (req, res) => {
   res.send(users);
 });
 
 
-const doesUserExist = ('/users/:id', (req, res, next) => {
+const doesUserExist = ('/:id', (req, res, next) => {
   // eslint-disable-next-line no-underscore-dangle
   if (!(users.some((item) => item._id === req.params.id))) {
     res.status(404).send({ message: 'Нет пользователя с таким id' });
@@ -21,7 +21,7 @@ const sendUser = (req, res) => {
   res.send(user);
 };
 
-usersRouter.get('/users/:id', doesUserExist);
-usersRouter.get('/users/:id', sendUser);
+usersRouter.get('/:id', doesUserExist);
+usersRouter.get('/:id', sendUser);
 
 module.exports = usersRouter;
